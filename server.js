@@ -5,7 +5,13 @@ const axios = require('axios');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+// CORS configuration più permissiva
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: false
+}));
 app.use(express.json());
 
 let cryptoData = [];
@@ -325,6 +331,8 @@ async function fetchAllCryptoData() {
 }
 
 // Endpoints
+app.options('*', cors()); // Preflight requests
+
 app.get('/api/coins', (req, res) => {
   res.json({
     success: true,
