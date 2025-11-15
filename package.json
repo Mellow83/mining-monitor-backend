@@ -1,7 +1,7 @@
 {
   "name": "mining-monitor-backend",
-  "version": "1.0.0",
-  "description": "Backend for SHA-256 Mining Monitor",
+  "version": "3.0.0",
+  "description": "Backend for SHA-256 Mining Monitor with Web Scraping",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -12,6 +12,7 @@
   "dependencies": {
     "express": "^4.18.2",
     "cors": "^2.8.5",
-    "axios": "^1.6.0"
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12"
   }
 }
